@@ -1,0 +1,39 @@
+#login{
+    width: 100%;
+    padding:10px;
+}
+
+#login >div{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 10px;
+    padding-bottom: 5px;
+}
+
+#login >div >h2{
+    display: flex;
+    align-self: center;
+    justify-self: flex-start;
+}
+
+#login >form{
+    width: 100%;
+    padding: 10px;
+    padding-top: 5px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+}
+
+#login >form >input[type=submit]{
+    width: 100%;
+    height: 40px;
+    background-color: darkblue;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    color: white;
+    font-weight: 800;
+    font-size: 1em;
+    margin-top: 10px;
+}

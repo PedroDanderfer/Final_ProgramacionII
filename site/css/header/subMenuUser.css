@@ -1,0 +1,15 @@
+#subMenuUser{
+    width: 100%;
+    height: fit-content;
+    list-style: none;
+}
+
+#subMenuUser >ul >li{
+    width: 100%;
+    padding: 10px;
+    padding-left: 0;
+}
+
+#subMenuUser >ul >li:first-of-type{
+    padding-top: 0;
+}

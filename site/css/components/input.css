@@ -1,0 +1,32 @@
+#input{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
+    margin-top: 10px;
+}
+
+#input >div >input{
+    width: 100%;
+    padding: 5px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    outline: none;
+    display: block;
+    margin-top: 5px;
+}
+
+#input >ul{
+    width: 100%;
+    list-style: none;
+    color: red;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
+}
+
+#input >ul >li{
+    display: flex;
+    align-self: center;
+    justify-self: flex-start;
+}
