@@ -1,4 +1,4 @@
-<header>
+<header class="fixed-top">
     <div>
         <button id="DisplayMenuBtn">
             <span></span>

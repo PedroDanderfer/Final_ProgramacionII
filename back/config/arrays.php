@@ -1,5 +1,5 @@
 <?php 
-$views = ['home', 'register', 'login', 'product', 'products'];
+$views = ['home', 'register', 'login', 'product', 'products', 'profile'];
 
 $panelCategories = ['products', 'users', 'categories', 'productCreate', 'productEdit'];
 

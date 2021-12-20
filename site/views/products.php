@@ -66,7 +66,7 @@
         <ul>
             <?php for ($i=0; $i < count($products); $i++): ?>
                 <li>
-                    <a href="index.php?section=product&id=<?= $products[$i]["id"] ?>"]>
+                    <a href="index.php?section=product&id=<?= $products[$i]["id"] ?>">
                         <div>
                             <h3><?= $products[$i]["title"] ?></h3>
                             <div>

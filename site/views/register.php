@@ -8,7 +8,7 @@
         <h2>Registrate</h2>
         <p>Rapido y sencillo</p>
     </div>
-    <?php if (isset($_SESSION['status']) && $_SESSION['status'] === false && $_SESSION['type'] === 'general' && $_SESSION['section'] === 'register' && isset($_SESSION['errors']) && $_SESSION['section'] === $_GET['section']): ?>
+    <?php if (isset($_SESSION['status']) && isset($_SESSION['type']) && $_SESSION['status'] === false && $_SESSION['type'] === 'general' && $_SESSION['section'] === 'register' && isset($_SESSION['errors']) && $_SESSION['section'] === $_GET['section']): ?>
         <ul>
             <?php foreach ($_SESSION['errors'] as $error): ?>
                 <li><?= $error ?></li>
