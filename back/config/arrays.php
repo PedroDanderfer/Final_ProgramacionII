@@ -1,6 +1,7 @@
 <?php 
+$views = ['home', 'register', 'login', 'product', 'products'];
 
-$views = ['home', 'register', 'login'];
+$panelCategories = ['products', 'users', 'categories', 'productCreate', 'productEdit'];
 
 $validatorKeys = array(
     "dni" => "documento",
@@ -8,5 +9,12 @@ $validatorKeys = array(
     "surname" => "apellido",
     "email" => "correo electronico",
     "password" => "contraseña",
-    "confirmPassword" => "confirmar contraseña"
+    "confirmPassword" => "confirmar contraseña",
+    "photos" => "imagenes",
+    "price" => "precio",
+    "title" => "titulo",
+    "description" => "descripción",
+    "discount" => "descuento",
+    "stock" => "stock",
+    "categories" => "categorias"
 );

@@ -36,7 +36,13 @@ function validate($key, $data, $rules, $allData){
             }
             
             if($res !== true){
-                $errors[] = $res;
+                if(is_array($res)){
+                    for ($i=0; $i < count($res); $i++) { 
+                        $errors[] = $res[$i];
+                    }
+                }else{
+                    $errors[] = $res;
+                }
             }else{
                 continue;
             }
@@ -44,7 +50,13 @@ function validate($key, $data, $rules, $allData){
             $res = $rules[$i]($key, $data);
 
             if($res !== true){
-                $errors[] = $res;
+                if(is_array($res)){
+                    for ($i=0; $i < count($res); $i++) { 
+                        $errors[] = $res[$i];
+                    }
+                }else{
+                    $errors[] = $res;
+                }
             }else{
                 continue;
             }
@@ -56,6 +68,108 @@ function validate($key, $data, $rules, $allData){
         return true;
     }else{
         return $errors;
+    }
+}
+
+function type($key, $data){
+    if(!is_null($data)){
+        $errors = [];
+        $hasError = false;
+        for ($i=0; $i < count($data); $i++) { 
+            if($data[$i]["type"] !== "image/png" && $data[$i]["type"] !== "image/jpeg"){
+                $errors[] = 'La imagen n° '.($i+1).' debe ser png o jpeg.';
+                $hasError = true;
+            }else{
+                continue;
+            }
+        }
+
+        if($hasError){
+            return $errors;
+        }else{
+            return true;
+        }
+    }else{
+        return true;
+    }
+}
+
+function exists($key, $data, $table){
+    global $validatorKeys;
+    if(!is_null($data)){
+        if(is_array($data)){
+            $errors = [];
+            $hasError = false;
+            $querySelect = "SELECT * FROM $table WHERE id in (";
+
+            for ($i=0; $i < count($data); $i++) { 
+                if(count($data) == 0){
+                    $querySelect = $querySelect."$data[$i]";
+                }else{
+                    if($i == count($data)-1){
+                        $querySelect = $querySelect."$data[$i]";
+                    }else{
+                        $querySelect = $querySelect."$data[$i], ";
+                    }
+                }
+            }
+
+            $querySelect = $querySelect.");";
+
+            $rtaSelect = select($querySelect);
+
+            $idExist = false;
+
+            for ($i=0; $i < count($data); $i++) { 
+                $idExist = false;
+                for ($j=0; $j < count($rtaSelect); $j++) { 
+                    if($data[$i] === $rtaSelect[$j]["id"]){
+                        $idExist = true;
+                    }
+                }
+                if(!$idExist){
+                    return ["El campo ".$validatorKeys[$key]." no existe."];
+                }
+            }
+            return true;
+        }else{
+            $querySelect = <<<SELECTEXIST
+            SELECT * FROM $table
+            WHERE id='$data[id]';
+            SELECTEXIST;
+
+            $rtaSelect = select($querySelect);
+            if(count($rtaSelect) == 0){
+                return ['El campo '.$validatorKeys[$key].' no existe.'];
+            }else{
+                return true;
+            }
+        }
+    }
+
+    return true;
+}
+
+function size($key, $data){
+    if(!is_null($data)){
+        $errors = [];
+        $hasError = false;
+        for ($i=0; $i < count($data); $i++) { 
+            if($data[$i]["size"] > 524288){
+                $errors[] = 'La imagen n° '.($i+1).' no puede pesar mas de 524Kbs.';
+                $hasError = true;
+            }else{
+                continue;
+            }
+        }
+
+        if($hasError){
+            return $errors;
+        }else{
+            return true;
+        }
+    }else{
+        return true;
     }
 }
 
@@ -92,10 +206,14 @@ function minlen($key, $data, $n){
 function numeric($key, $data){
     global $validatorKeys;
 
-    if(!is_numeric($data)){
-        return 'El campo '.$validatorKeys[$key].' solo puede contener números.';
-    }else{
+    if(is_null($data)){
         return true;
+    }else{
+        if(!is_numeric($data)){
+            return 'El campo '.$validatorKeys[$key].' solo puede contener números.';
+        }else{
+            return true;
+        }
     }
 }
 

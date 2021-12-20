@@ -1,11 +1,16 @@
-<li id="subMenuUser">
+<li id="user-submenu">
     <?php if(!isset($_SESSION['user']['id'])): ?>
-        <ul>
-            <li><a href="index.php?section=login">Iniciar sesión</a></li>
-            <li><a href="index.php?section=register">Registrarme</a></li>
-        </ul>
+        <div>
+            <ul>
+                <li><a href="index.php?section=login">Iniciar sesión</a></li>
+                <li><a href="index.php?section=register">Registrarme</a></li>
+            </ul>
+        </div>
     <?php else: ?>
-        <ul>
+        <div>
+            <button id="DisplayUserSubMenuBtn"><span><?= $_SESSION['user']['name'].' '.$_SESSION['user']['surname'] ?></span><span id="UserSubMenuArrowSpan"></span></button>
+        </div>
+        <ul id="UserSubmenu">
             <li><a href="index.php?section=profile">Mi perfil</a></li>
             <li><a href="index.php?section=profile">Mis compras</a></li>
             <?php if(isset($_SESSION['user']['role']) && $_SESSION['user']['role'] === 'admin'): ?>

@@ -1,0 +1,133 @@
+#products{
+    padding: 10px;
+}
+
+#products >ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding-top: 20px;
+}
+
+#products >ul >li {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    padding-right: 20px;
+}
+
+#products >ul >li >a{
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+}
+
+#products >ul >li >a >div:first-of-type{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+#products >ul >li >a >div:first-of-type p{
+    display: flex;
+    align-self: center;
+    justify-self: flex-start;
+}
+
+#products >ul >li >a >div:first-of-type >div{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+}
+
+#products >ul >li >a >div:last-of-type{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+#products >ul >li >a >div:last-of-type p{
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    font-size: 20px;
+}
+
+#products >ul >li >div{
+    display: grid;
+    grid-template-columns: 40px 40px;
+    grid-gap: 20px;
+}
+
+#products >ul >li >div >div{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    justify-self: center;
+    align-self: center;
+} 
+
+#products >ul >li >div >div >a{
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    background-image: url('../../../images/edit-icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 0;
+    outline: none;
+}
+
+#products >ul >li >div >form{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    justify-self: center;
+    align-self: center;
+} 
+
+#products >ul >li >div >form input[type=submit]{
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border:none;
+    background-image: url('../../../images/remove-icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 0;
+    outline: none;
+}
+
+#users >ul >li >form input[type=submit]{
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 0;
+    outline: none;
+    border: none;
+    background-color: white;
+}
+
+@media (min-width:600px){
+    #products{
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

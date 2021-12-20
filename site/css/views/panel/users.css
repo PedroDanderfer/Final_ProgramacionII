@@ -1,0 +1,73 @@
+#users{
+    padding: 10px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#users >ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+}
+
+#users >ul >li{
+    display: grid;
+    grid-template-columns: 1fr 30px 30px;
+    grid-gap: 20px;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+#users >ul >li >div:first-of-type{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: 20px;
+}
+
+#users >ul >li >div:first-of-type{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: 20px;
+}
+
+#users >ul >li >form{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    align-self: center;
+    justify-self: center;
+}
+
+#users >ul >li >form input[type=submit]{
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 0;
+    outline: none;
+    border: none;
+    background-color: white;
+}
+
+.user-icon{
+    background-image: url('../../../images/user-icon.png');
+}
+
+.useradmin-icon{
+    background-image: url('../../../images/useradmin-icon.png');
+}
+
+.ban-icon{
+    background-image: url('../../../images/lock-icon.png');
+}
+
+.unban-icon{
+    background-image: url('../../../images/unlock-icon.png');
+}

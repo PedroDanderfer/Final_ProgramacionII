@@ -1,6 +1,9 @@
 #login{
     width: 100%;
     padding:10px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #login >div{
@@ -36,4 +39,11 @@
     font-weight: 800;
     font-size: 1em;
     margin-top: 10px;
+}
+
+#login >form >a{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
 }

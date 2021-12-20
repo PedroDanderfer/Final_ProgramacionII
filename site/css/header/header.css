@@ -3,6 +3,7 @@ header{
     height: 60px;
     position: fixed;
     background-color: white;
+    max-width: 1920px;
 }
 
 header a{
@@ -48,4 +49,27 @@ header >div:first-of-type >button:first-of-type >span{
     background-color: #333;
     border: 1px solid #333;
     border-radius: 50px;
+}
+
+@media (min-width: 600px) {
+    header{
+        height: fit-content;
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    header >div{
+        height: fit-content;
+        grid-template-columns: 1fr!important;
+    }
+
+    header >div >button{
+        display: none!important;
+    }
+
+    header >div >h1{
+        justify-self: flex-start!important;
+    }
 }

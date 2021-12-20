@@ -7,11 +7,9 @@ $matchs = [];
 $rta = mysqli_query($cnx, $query);
 
 if(mysqli_error($cnx)){
-    session([
-        "status" => false,
-        "type" => 'global',
-        "errors" => 'Ops... Ocurrio un problema'
-    ]);
+    $_SESSION['status'] = false;
+    $_SESSION['section'] = 'global';
+    $_SESSION['errors'] = ['Ops... Ocurrio un problema'];
 }
 
 if(mysqli_num_rows($rta) > 0){

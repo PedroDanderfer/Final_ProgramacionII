@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+ini_set('memory_limit', '-1');
 // mostrar todos los errores
 error_reporting(E_ALL);
 ini_set("display_errors", true);

@@ -86,6 +86,8 @@ if(!$rtaInsertUser){
     $_SESSION['section'] = 'register';
     $_SESSION['type'] = 'general';
     $_SESSION['errors'] = ["Ocurrio un problema a la hora de crear el usuario."];
+
+    return header('Location: ../../../index.php?section=register');
 }
 
 $_SESSION['status'] = true;

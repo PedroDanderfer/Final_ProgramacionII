@@ -19,7 +19,14 @@ $section = $_GET["section"] ?? "home";
 	<link rel="stylesheet" href="./site/css/header/subMenuUser.css">
 	<link rel="stylesheet" href="./site/css/views/register.css">
 	<link rel="stylesheet" href="./site/css/views/login.css">
+	<link rel="stylesheet" href="./site/css/views/panel/panel.css">
+	<link rel="stylesheet" href="./site/css/views/panel/categories.css">
+	<link rel="stylesheet" href="./site/css/views/panel/users.css">
+	<link rel="stylesheet" href="./site/css/views/panel/products.css">
+	<link rel="stylesheet" href="./site/css/views/panel/productEdit.css">
+	<link rel="stylesheet" href="./site/css/views/panel/productCreate.css">
 	<link rel="stylesheet" href="./site/css/components/input.css">
+	<link rel="stylesheet" href="./site/css/components/editPhotosInput.css">
 </head>
 <body>
 	<?php
@@ -27,10 +34,13 @@ $section = $_GET["section"] ?? "home";
 	?>
 	<main>
 		<?php 
-		if (in_array($section, $views))
+		if (in_array($section, $views) && $section !== 'panel'){
 			require_once("./site/views/$section.php");
-		else
+		}else if($section === 'panel'){
+			require_once("./site/views/panel/index.php");
+		}else{
 			require_once("./site/views/error.php");
+		}
 		?>
 	</main>
 </body>

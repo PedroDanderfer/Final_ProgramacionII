@@ -1,0 +1,28 @@
+.editPhotosInput >div >ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.editPhotosInput >div >ul >li{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 30px;
+    grid-gap: 20px;
+}
+
+.editPhotosInput >div >ul >li >img{
+    display: block;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.editPhotosInput >div >ul >li >a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}

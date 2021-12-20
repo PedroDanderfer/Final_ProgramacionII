@@ -26,3 +26,30 @@ header >nav >ul >li >ul{
     width: 100%;
     list-style: none;
 }
+
+
+@media (min-width: 600px) {
+    header >nav{
+        height: fit-content!important;
+        position: static!important;
+        transform: translateX(0)!important;
+        background-color: white!important;
+    }
+
+    #navMenu >ul{
+        width: 100%!important;
+        height: fit-content!important;
+        padding: 0!important;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        float: right;
+    }
+
+    #navMenu >ul >li{
+        width: fit-content!important;
+        display: flex!important;
+        align-self: center;
+        justify-self: center;
+    }
+}
