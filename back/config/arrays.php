@@ -18,3 +18,5 @@ $validatorKeys = array(
     "stock" => "stock",
     "categories" => "categorias"
 );
+
+$shoppingCart = [];

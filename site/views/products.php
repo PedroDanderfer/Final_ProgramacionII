@@ -72,7 +72,7 @@
                             <div>
                                 <p>$<?= $products[$i]["price"] ?></p>
                                 <?php if(isset($products[$i]["discount"]) && $products[$i]["discount"] > 0): ?>
-                                    <p><?= $products[$i]["discount"] ?></p>
+                                    <p>¡Precio final: $<?= $products[$i]["discount"] ?>!</p>
                                 <?php endif; ?>
                             </div>
                         </div>

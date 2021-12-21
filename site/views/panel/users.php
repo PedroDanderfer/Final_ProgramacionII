@@ -27,9 +27,9 @@
                     <form action="./back/controller/user/ban.php" method="post">
                         <input type="hidden" name="user" value="<?= $users[$i]['id'] ?>">
                         <?php if($users[$i]['banned'] == 1): ?>
-                            <input type="submit" value="Desbloquear usuario" class="unban-icon">
+                            <input type="submit" value="Desbloquear usuario" class="ban-icon">
                         <?php else: ?>
-                            <input type="submit" value="Bloquear usuario" class="ban-icon">
+                            <input type="submit" value="Bloquear usuario" class="unban-icon">
                         <?php endif; ?>
                     </form>
                     <form action="./back/controller/user/changeRol.php" method="post">

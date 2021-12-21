@@ -3,6 +3,7 @@ require("./back/config/config.php");
 require("./back/config/arrays.php");
 require("./back/config/functions/sql.php");
 require("./back/config/functions/session.php");
+require("./back/config/functions/shoppingCart.php");
 
 $section = $_GET["section"] ?? "home";
 ?>

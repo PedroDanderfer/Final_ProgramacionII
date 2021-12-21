@@ -83,7 +83,7 @@ if(!empty($rtaSelectCategories)){
                                 <img class="d-block w-100" src="./site/images/products/<?= $product["images"][0]["image"] ?>.jpg" alt="First slide" />
                             </div>
                             <?php if(count($product["images"]) > 1): ?>
-                                <?php for ($i=0; $i < count($product["images"]); $i++): ?>
+                                <?php for ($i=1; $i < count($product["images"]); $i++): ?>
                                     <div class="carousel-item">
                                         <img class="d-block w-100" src="./site/images/products/<?= $product["images"][$i]["image"] ?>.jpg" alt="First slide" &>
                                     </div>
@@ -104,7 +104,7 @@ if(!empty($rtaSelectCategories)){
             <div class="col-sm">
                 <div>
                     <h3><?= $product["title"] ?></h3>
-                    <?php if(isset($product["descripcion"])): ?>
+                    <?php if(!empty($product["description"])): ?>
                         <p><?= $product["description"] ?></p>
                     <?php else: ?>
                         <p>El articulo no posee descripción.</p>
