@@ -8,15 +8,20 @@
         return header('Location: index.php?section=home');
     }
     $product = [];
+    $productId = (empty($_GET['id'])) ? null : $_GET['id'];
+
+    if(is_null($productId)){
+        return header('Location: index.php?section=panel&category=products');
+    }
 
     $querySelectProduct = <<<SELECTPRODUCTS
     SELECT * FROM products
-    WHERE id='$_GET[id]';
+    WHERE id='$productId';
     SELECTPRODUCTS;
 
     $rtaSelectProduct = select($querySelectProduct);
 
-    if(count($rtaSelectProduct) > 0){
+    if(!empty($rtaSelectProduct)){
         $product["id"] = $rtaSelectProduct[0]["id"];
         $product["title"] = $rtaSelectProduct[0]["title"];
         $product["description"] = $rtaSelectProduct[0]["description"];
@@ -39,6 +44,7 @@
         }
 
     }else{
+        echo 'mal';
         return header('Location: index.php?section=panel&category=products');
     }
 ?>

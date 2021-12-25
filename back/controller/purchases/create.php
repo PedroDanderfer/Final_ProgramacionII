@@ -32,7 +32,7 @@ if(empty($products)){
     $_SESSION['type'] = 'general';
     $_SESSION['errors'] = ['No seleccionaste ningun producto.'];
 
-    return header('Location: ../../../index.php?section=purchases');
+    return header('Location: ../../../index.php?section=purchase');
 }
 
 $querySelectProductsFromCart = "SELECT products.id, products.price, products.discount, products.stock FROM products WHERE id IN ("; 
@@ -55,7 +55,7 @@ if(!empty($rtaSelectProductsFromCart)){
     $_SESSION['type'] = 'general';
     $_SESSION['errors'] = ['Los productos ingresados son invalidos.'];
 
-    return header('Location: ../../../index.php?section=purchases');
+    return header('Location: ../../../index.php?section=purchase');
 }
 
 for ($i=0; $i < count($productsFromDB); $i++) { 

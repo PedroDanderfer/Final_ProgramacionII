@@ -32,7 +32,7 @@
             <?php if(!isLogged()): ?>
                 <a href="index.php?section=login">Inicia sesión</a>
             <?php else: ?>
-                <?php if(isset($_SESSION["shoppingCart"])): ?>
+                <?php if(isset($_SESSION["shoppingCart"]) && !empty($_SESSION["shoppingCart"])): ?>
                     <a href="index.php?section=purchase">Continuar con la compra</a>
                 <?php endif; ?>
             <?php endif; ?>

@@ -47,20 +47,20 @@
                     }
                 }
             }
-        }
 
-        $rtaSelectPhotosFromProducts = select($querySelectPhotosFromProducts);
+            $rtaSelectPhotosFromProducts = select($querySelectPhotosFromProducts);
 
-        for ($i=0; $i < count($rtaSelectPhotosFromProducts); $i++) { 
-            for ($j=0; $j < count($products); $j++) { 
-                if($rtaSelectPhotosFromProducts[$i]["products_id"] == $products[$j]["id"]){
-                    if(isset($products[$j]["image"]) && !empty($products[$j]["image"])){
-                        continue;
+            for ($i=0; $i < count($rtaSelectPhotosFromProducts); $i++) { 
+                for ($j=0; $j < count($products); $j++) { 
+                    if($rtaSelectPhotosFromProducts[$i]["products_id"] == $products[$j]["id"]){
+                        if(isset($products[$j]["image"]) && !empty($products[$j]["image"])){
+                            continue;
+                        }else{
+                            $products[$j]["image"] = $rtaSelectPhotosFromProducts[$i]["image"];
+                        }
                     }else{
-                        $products[$j]["image"] = $rtaSelectPhotosFromProducts[$i]["image"];
+                        continue;
                     }
-                }else{
-                    continue;
                 }
             }
         }

@@ -35,7 +35,7 @@ if(count($rtaSelectPhoto) == 0){
     $_SESSION['type'] = 'general';
     $_SESSION['errors'] = ['Ocurrio un problema con la foto.'];
 
-    return header('Location: ../../../index.php?section=panel&category=productEdit&id='.$data["photo"]);
+    return header('Location: ../../../index.php?section=panel&category=productEdit&id='.$data["product"]);
 }
 
 $queryDeletePhoto = <<<DELETEPHOTOS
@@ -50,7 +50,7 @@ if(!$rtaDeletePhoto){
     $_SESSION['type'] = 'general';
     $_SESSION['errors'] = ['Ops... Ocurrio un problema'];
 
-    return header('Location: ../../../index.php?section=panel&category=productEdit&id='.$data["photo"]);
+    return header('Location: ../../../index.php?section=panel&category=productEdit&id='.$data["product"]);
 }
 
 unlink('../../../site/images/products/'.$rtaSelectPhoto[0]["image"].'.jpg');
@@ -58,4 +58,4 @@ unlink('../../../site/images/products/'.$rtaSelectPhoto[0]["image"].'.jpg');
 $_SESSION['status'] = true;
 $_SESSION['section'] = 'productEdit';
 
-return header('Location: ../../../index.php?section=panel&category=productEdit&id='.$data["photo"]);
+return header('Location: ../../../index.php?section=panel&category=productEdit&id='.$data["product"]);

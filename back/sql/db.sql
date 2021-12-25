@@ -1,6 +1,8 @@
 DROP DATABASE IF EXISTS ecommerce;
 CREATE DATABASE IF NOT EXISTS ecommerce;
 
+use ecommerce;
+
 DROP TABLE IF EXISTS users;
 CREATE TABLE IF NOT EXISTS users (
     id int UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -118,6 +120,27 @@ VALUES (2, 'Bermuda Short', 'Bermuda short unisex. Estilo deportivo, excelente p
 INSERT INTO products (id, title, description, price, discount, stock) 
 VALUES (3, 'Traje de baño', 'Traje de baño unisex. Varios estilos: deportivo, playero. Disponibilidad de colores y talles', 400, 350, 7);
 
+INSERT INTO products (id, title, description, price, discount, stock) 
+VALUES (4, 'Zapatilla Jordan Max', 'Zapatilla original Jordan Max todos los talles. Importadas de estados unidos', 1400, 0, 3);
+
+INSERT INTO products (id, title, description, price, discount, stock) 
+VALUES (5, 'Zapatilla Nike AirMax Roja', 'Zapatilla original Nike AirMax Roja, todos los talles. Excelente calzado', 1200, 1000, 3);
+
+INSERT INTO products (id, title, description, price, discount, stock) 
+VALUES (6, 'Boina clasica', 'Boina irlandesa clasica. Calza excelente en la cabeza', 300, 250, 3);
+
+INSERT INTO products (id, title, description, price, discount, stock) 
+VALUES (7, 'Gorra Jordan', 'Gorra Jordan Nike original.', 600, 0, 3);
+
+INSERT INTO products (id, title, description, price, discount, stock) 
+VALUES (8, 'Gorra lisa', 'Gorra lisa, varios tamaños y colores.', 300, 0, 3);
+
+INSERT INTO products (id, title, description, price, discount, stock) 
+VALUES (9, 'Remeras lisa', 'Remeras lisas de algodón. Varios colores y talles', 500, 0, 3);
+
+INSERT INTO products (id, title, description, price, discount, stock) 
+VALUES (10, 'Remera naruto', 'Remera con tematica de animé naruto. 100% algodón.', 400, 200, 3);
+
 INSERT INTO products_photos (image, products_id) 
 VALUES ('pantalon-jean-negro', 1);
 INSERT INTO products_photos (image, products_id) 
@@ -136,6 +159,23 @@ INSERT INTO products_photos (image, products_id)
 VALUES ('malla-mujer', 3);
 INSERT INTO products_photos (image, products_id) 
 VALUES ('malla-mujer-deportivo', 3);
+INSERT INTO products_photos (image, products_id) 
+VALUES ('zapatilla-jordan', 4);
+INSERT INTO products_photos (image, products_id) 
+VALUES ('zapatilla-roja', 5);
+INSERT INTO products_photos (image, products_id) 
+VALUES ('boina', 6);
+INSERT INTO products_photos (image, products_id) 
+VALUES ('gorra-jordan', 7);
+INSERT INTO products_photos (image, products_id) 
+VALUES ('gorra-jordan-negra', 7);
+INSERT INTO products_photos (image, products_id) 
+VALUES ('gorra-lisa-negra', 8);
+INSERT INTO products_photos (image, products_id) 
+VALUES ('remera-lisa-negra', 9);
+INSERT INTO products_photos (image, products_id) 
+VALUES ('remera-naruto', 10);
+
 
 INSERT INTO products_has_categories (products_id, categories_id) 
 VALUES (1, 1);
@@ -143,5 +183,17 @@ INSERT INTO products_has_categories (products_id, categories_id)
 VALUES (2, 1);
 INSERT INTO products_has_categories (products_id, categories_id) 
 VALUES (3, 1);
-
-/*Administrador1!*/
+INSERT INTO products_has_categories (products_id, categories_id) 
+VALUES (4, 3);
+INSERT INTO products_has_categories (products_id, categories_id) 
+VALUES (5, 3);
+INSERT INTO products_has_categories (products_id, categories_id) 
+VALUES (6, 4);
+INSERT INTO products_has_categories (products_id, categories_id) 
+VALUES (7, 4);
+INSERT INTO products_has_categories (products_id, categories_id) 
+VALUES (8, 4);
+INSERT INTO products_has_categories (products_id, categories_id) 
+VALUES (9, 2);
+INSERT INTO products_has_categories (products_id, categories_id) 
+VALUES (10, 2);

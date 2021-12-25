@@ -25,14 +25,22 @@ if(is_null($product_id)){
         $_SESSION['type'] = 'general';
         $_SESSION['errors'] = ['El producto es invalido.'];
 
-        return header('Location: ../../../index.php?section='.$section);
+        if($section == 'purchase' && empty($_SESSION["shoppingCart"])){
+            return header('Location: ../../../index.php?section=products');
+        }else{
+            return header('Location: ../../../index.php?section='.$section);
+        }
     }else{
         $_SESSION['status'] = false;
         $_SESSION['section'] = $section;
         $_SESSION['type'] = 'general';
         $_SESSION['errors'] = ['El producto es invalido.'];
 
-        return header('Location: ../../../index.php?section='.$section.'&id='.$section_id);
+        if($section == 'purchase' && empty($_SESSION["shoppingCart"])){
+            return header('Location: ../../../index.php?section=products');
+        }else{
+            return header('Location: ../../../index.php?section='.$section.'&id='.$section_id);
+        }
     }
 }
 
@@ -51,7 +59,15 @@ if(!is_null($idFromProduct)){
 }
 
 if(is_null($section_id)){
-    return header('Location: ../../../index.php?section='.$section);
+    if($section == 'purchase' && empty($_SESSION["shoppingCart"])){
+        return header('Location: ../../../index.php?section=products');
+    }else{
+        return header('Location: ../../../index.php?section='.$section);
+    }
 }else{
-    return header('Location: ../../../index.php?section='.$section.'&id='.$section_id);
+    if($section == 'purchase' && empty($_SESSION["shoppingCart"])){
+        return header('Location: ../../../index.php?section=products');
+    }else{
+        return header('Location: ../../../index.php?section='.$section.'&id='.$section_id);
+    }
 }

@@ -82,7 +82,7 @@
         </ul>
     <?php else: ?>
         <div>
-            <p>Sin productos</p>
+            <p>Todavia no se subieron productos.</p>
         </div>
     <?php endif; ?>
 </section>

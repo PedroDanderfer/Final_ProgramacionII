@@ -43,7 +43,7 @@ if(is_null($rtaSelectUser)){
     return header('Location: ../../../index.php?section=login');
 }
 
-if($rtaSelectUser[0]['banned'] === 1){
+if($rtaSelectUser[0]['banned'] == 1){
     $_SESSION['status'] = false;
     $_SESSION['section'] = 'login';
     $_SESSION['type'] = 'general';
