@@ -1,0 +1,15 @@
+#home{
+    padding: 20px;
+}
+
+#home >div{
+    margin-top: 20px;
+}
+
+@media(min-width:600px){
+    #home >div{
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -3,6 +3,7 @@ require("../../config/config.php");
 require("../../config/arrays.php");
 require("../../config/functions/validator.php");
 require("../../config/functions/sql.php");
+require("../../config/functions/session.php");
 
 $data = array(
     "dni" => (empty($_POST['dni'])) ? null : $_POST['dni'],
@@ -50,11 +51,11 @@ if(count($rtaUniqueDniAndEmail) > 0){
     $dniExists = false;
     $emailExists = false;
     
-    for ($i=0; $i < count($rta); $i++) { 
-        if($rta[$i]['dni'] === $data['dni']){
+    for ($i=0; $i < count($rtaUniqueDniAndEmail); $i++) { 
+        if($rtaUniqueDniAndEmail[$i]['dni'] === $data['dni']){
             $dniExists = true;
         }
-        if($rta[$i]['email'] === $data['email']){
+        if($rtaUniqueDniAndEmail[$i]['email'] === $data['email']){
             $emailExists = true;
         }
     }

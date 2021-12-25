@@ -1,5 +1,10 @@
 <?php 
     if(!isLoggedAdmin()){
+        $_SESSION['status'] = false;
+        $_SESSION['section'] = 'home';
+        $_SESSION['type'] = 'general';
+        $_SESSION['errors'] = ['Tenes que estar logeado y ser administrador.'];
+    
         return header('Location: index.php?section=home');
     }
     

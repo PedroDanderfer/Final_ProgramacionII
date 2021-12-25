@@ -7,6 +7,7 @@ function displaySubmenu(e){
     var menus = [];
     menus["DisplayProductSubMenuBtn"] = "ProductsSubmenu";
     menus["DisplayUserSubMenuBtn"] = "UserSubmenu";
+    menus["DisplayShoppingCartSubMenuBtn"] = "ShoppingCartSubMenu";
     var menu = d.getElementById(menus[id]);
 
     if(menus[id] === undefined){
@@ -22,6 +23,25 @@ function displaySubmenu(e){
             UserSubMenuArrowSpan.style.backgroundImage = 'url(./site/images/arrow-down.png)';
         }
     }else{
+        console.log(menus[id]);
+        switch (menus[id]) {
+            case 'ProductsSubmenu':
+                if(d.getElementById('UserSubmenu')){
+                    d.getElementById('UserSubmenu').style.display = 'none';
+                }
+                d.getElementById('ShoppingCartSubMenu').style.display = 'none';
+                break;
+            case 'UserSubmenu':
+                d.getElementById('ProductsSubmenu').style.display = 'none';
+                d.getElementById('ShoppingCartSubMenu').style.display = 'none';
+            case 'ShoppingCartSubMenu':
+                if(d.getElementById('UserSubmenu')){
+                    d.getElementById('UserSubmenu').style.display = 'none';
+                }
+                d.getElementById('ProductsSubmenu').style.display = 'none';
+            default:
+                break;
+        }
         menu.style.display ='block';
         if(window.screen.width > 600){
             menu.style.transform = 'translateY(50px)';

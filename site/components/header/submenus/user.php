@@ -12,7 +12,7 @@
         </div>
         <ul id="UserSubmenu">
             <li><a href="index.php?section=profile">Mi perfil</a></li>
-            <li><a href="index.php?section=profile">Mis compras</a></li>
+            <li><a href="index.php?section=myPurchases">Mis compras</a></li>
             <?php if(isset($_SESSION['user']['role']) && $_SESSION['user']['role'] === 'admin'): ?>
                 <li><a href="index.php?section=panel">Panel de administrador</a></li>
             <?php endif; ?>

@@ -1,9 +1,15 @@
 <?php
     if(!isLoggedAdmin()){
+        $_SESSION['status'] = false;
+        $_SESSION['section'] = 'home';
+        $_SESSION['type'] = 'general';
+        $_SESSION['errors'] = ['Tenes que estar logeado y ser administrador.'];
+    
         return header('Location: index.php?section=home');
     }
 
     $category = $_GET["category"] ?? "products";
+    $category = (!isset($_GET['category'])) ? 'products' : $_GET['category'];
     $titleCategory = [];
     $titleCategory['products'] = 'Productos';
     $titleCategory['productCreate'] = 'Crear producto';
@@ -27,7 +33,7 @@
             </ul>
         </nav>
     </div>
-    <?php if (isset($_SESSION['status']) && $_SESSION['status'] === false && $_SESSION['type'] === 'general' && $_SESSION['section'] === $_GET['category']): ?>
+    <?php if (isset($_SESSION['status']) && $_SESSION['status'] === false && $_SESSION['type'] === 'general' && $_SESSION['section'] === $category): ?>
         <ul>
             <?php foreach ($_SESSION['errors'] as $error): ?>
                 <li><?= $error ?></li>

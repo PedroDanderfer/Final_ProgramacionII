@@ -4,6 +4,7 @@
         <?php 
             require_once('./site/components/header/submenus/products.php');
             require_once('./site/components/header/submenus/user.php');
+            require_once('./site/components/header/submenus/shoppingCart.php');
         ?>
     </ul>
 </nav>

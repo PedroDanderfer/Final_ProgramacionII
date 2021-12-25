@@ -3,6 +3,16 @@ require("../../config/config.php");
 require("../../config/arrays.php");
 require("../../config/functions/validator.php");
 require("../../config/functions/sql.php");
+require("../../config/functions/session.php");
+
+if(!isLoggedAdmin()){
+    $_SESSION['status'] = false;
+    $_SESSION['section'] = 'home';
+    $_SESSION['type'] = 'general';
+    $_SESSION['errors'] = ['Tenes que ser administrador para subir fotos a los productos.'];
+
+    return header('Location: ../../../index.php?section=home');
+}
 
 $data = array(
     "id" => (empty($_POST['id'])) ? null : $_POST['id'],

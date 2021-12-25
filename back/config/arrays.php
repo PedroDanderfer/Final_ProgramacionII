@@ -1,5 +1,5 @@
 <?php 
-$views = ['home', 'register', 'login', 'product', 'products', 'profile'];
+$views = ['home', 'register', 'login', 'product', 'products', 'profile', 'purchase', 'purchaseFinished', 'myPurchases'];
 
 $panelCategories = ['products', 'users', 'categories', 'productCreate', 'productEdit'];
 
@@ -18,5 +18,3 @@ $validatorKeys = array(
     "stock" => "stock",
     "categories" => "categorias"
 );
-
-$shoppingCart = [];

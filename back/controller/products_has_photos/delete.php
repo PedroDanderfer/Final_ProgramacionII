@@ -3,6 +3,16 @@ require("../../config/config.php");
 require("../../config/arrays.php");
 require("../../config/functions/validator.php");
 require("../../config/functions/sql.php");
+require("../../config/functions/session.php");
+
+if(!isLoggedAdmin()){
+    $_SESSION['status'] = false;
+    $_SESSION['section'] = 'home';
+    $_SESSION['type'] = 'general';
+    $_SESSION['errors'] = ['Tenes que ser administrador para eliminar fotos de productos.'];
+
+    return header('Location: ../../../index.php?section=home');
+}
 
 $data = array(
     "product" => (empty($_GET['id'])) ? null : $_GET['product_id'],

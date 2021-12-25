@@ -1,0 +1,135 @@
+#shoppingCart-submenu{
+    width: 100%;
+    height: fit-content;
+    list-style: none;
+}
+
+#shoppingCart-submenu >div:first-of-type{
+    width: 100%;
+    display: block;
+    height: fit-content;
+}
+
+#shoppingCart-submenu >div:first-of-type >button{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+    height: fit-content;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+}
+
+#shoppingCart-submenu >div:first-of-type >button >span:first-of-type{
+    display: flex;
+    align-self: center;
+    justify-self:flex-start;
+}
+
+#ShoppingCartSubMenuIconSpan{
+    display: flex;
+    align-self: center;
+    justify-self: flex-start;
+    background-color: transparent;
+    height: 30px;
+    width: 30px;
+    border: 1px solid transparent;
+    background-image: url('../../images/shoppingCart-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#ShoppingCartSubMenu{
+    transform: translateY(-50px);
+    transition: all 1s;
+    display: none;
+    background-color: white;
+}
+
+#ShoppingCartSubMenu >ul{
+    width: 100%;
+    height: fit-content;
+    list-style: none;
+    padding-top: 10px;
+}
+
+#ShoppingCartSubMenu >ul >li{
+    width: 100%;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: auto 30px;
+    grid-template-rows: 1fr;
+    margin-top: 10px;
+}
+
+#ShoppingCartSubMenu >ul >li:first-of-type{
+    margin-top: 0;
+}
+
+#ShoppingCartSubMenu >ul >li >div:first-of-type{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+}
+
+#ShoppingCartSubMenu >ul >li >div:first-of-type >p{
+    display: flex;
+    align-self: center;
+    justify-self: flex-start;
+}
+
+#ShoppingCartSubMenu >ul >li >a{
+    display: flex;
+    align-self: center;
+    justify-self: flex-end;
+    width: 30px;
+    height: 30px;
+    font-size: 0;
+    border: none;
+    background-color: white;
+    background-image: url('../../images/remove-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#ShoppingCartSubMenu >a{
+    margin-top: 10px;
+}
+
+@media (min-width:600px){
+    #shoppingCart-submenu >div:last-of-type{
+        position: absolute!important;
+        max-width: 200px;
+        border: 1px solid #333;
+        border-radius: 5px;
+        right: 0;
+    }
+
+    #shoppingCart-submenu >div:last-of-type >ul >li{
+        border: 1px solid transparent;
+    }
+    
+    #shoppingCart-submenu >div:first-of-type{
+        width: 30px;
+    }
+
+    #shoppingCart-submenu a{
+        padding: 5px;
+    }
+    
+    #shoppingCart-submenu >div:first-of-type >button{
+        grid-template-columns: 30px;
+        grid-template-rows: 30px;
+    }
+
+    #shoppingCart-submenu >div:first-of-type >button >span:first-of-type{
+        display: none;
+    }
+}

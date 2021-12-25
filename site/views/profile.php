@@ -1,6 +1,11 @@
 <?php 
 
 if(!isLogged()){
+    $_SESSION['status'] = false;
+    $_SESSION['section'] = 'home';
+    $_SESSION['type'] = 'general';
+    $_SESSION['errors'] = ['Tenes que estar logeado.'];
+
     return header('Location: index.php?section=home');
 }
 
@@ -18,7 +23,7 @@ $user = select($querySelectUser);
 
 ?>
 
-<section id="login">
+<section id="profile">
     <div>
         <h3>Mi perfil</h3>
     </div>

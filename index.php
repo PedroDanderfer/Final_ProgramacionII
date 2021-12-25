@@ -3,7 +3,6 @@ require("./back/config/config.php");
 require("./back/config/arrays.php");
 require("./back/config/functions/sql.php");
 require("./back/config/functions/session.php");
-require("./back/config/functions/shoppingCart.php");
 
 $section = $_GET["section"] ?? "home";
 ?>
@@ -19,8 +18,15 @@ $section = $_GET["section"] ?? "home";
 	<link rel="stylesheet" href="./site/css/header/navMenu.css">
 	<link rel="stylesheet" href="./site/css/header/subMenuProducts.css">
 	<link rel="stylesheet" href="./site/css/header/subMenuUser.css">
+	<link rel="stylesheet" href="./site/css/header/subMenuShoppingCart.css">
 	<link rel="stylesheet" href="./site/css/views/register.css">
 	<link rel="stylesheet" href="./site/css/views/login.css">
+	<link rel="stylesheet" href="./site/css/views/home.css">
+	<link rel="stylesheet" href="./site/css/views/product.css">
+	<link rel="stylesheet" href="./site/css/views/profile.css">
+	<link rel="stylesheet" href="./site/css/views/myPurchases.css">
+	<link rel="stylesheet" href="./site/css/views/purchase.css">
+	<link rel="stylesheet" href="./site/css/views/purchaseFinished.css">
 	<link rel="stylesheet" href="./site/css/views/panel/panel.css">
 	<link rel="stylesheet" href="./site/css/views/panel/categories.css">
 	<link rel="stylesheet" href="./site/css/views/panel/users.css">

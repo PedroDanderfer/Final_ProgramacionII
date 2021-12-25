@@ -1,5 +1,10 @@
 <?php
     if(isLogged()){
+        $_SESSION['status'] = false;
+        $_SESSION['section'] = 'home';
+        $_SESSION['type'] = 'general';
+        $_SESSION['errors'] = ['Ya estas logeado.'];
+    
         return header('Location: index.php?section=home');
     }
 ?>

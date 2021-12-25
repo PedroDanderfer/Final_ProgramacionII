@@ -1,0 +1,84 @@
+#myPurchases{
+    padding:20px;
+}
+
+#myPurchases ul{
+    list-style: none;
+}
+
+#myPurchases >ul >li{
+    border: 1px solid #333333;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+#myPurchases >ul >li:first-of-type{
+    margin-top: 0!important;
+}
+
+#myPurchases >ul >li >div:first-of-type{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    grid-template-rows: 1fr;
+}
+
+#myPurchases >ul >li >div:first-of-type >p:first-of-type{
+    display: flex;
+    align-self: center;
+    justify-self: flex-start;
+}
+
+#myPurchases >ul >li >div:first-of-type >p:last-of-type{
+    display: flex;
+    align-self: center;
+    justify-self: flex-end;
+}
+
+#myPurchases >ul >li >ul >li{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-top: 20px;
+}
+
+#myPurchases >ul >li >ul >li >img{
+    width: 100px;
+    height: 100px;
+}
+
+#myPurchases >ul >li >ul >li >div{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+}
+
+#myPurchases >ul >li >ul >li >div >div{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#myPurchases >ul >li >ul >li >div >div >p:first-of-type{
+    display: flex;
+    align-self: center;
+    justify-self: flex-start;
+}
+
+#myPurchases >ul >li >ul >li >div >div >p:last-of-type{
+    display: flex;
+    align-self: center;
+    justify-self: flex-end;
+}
+
+#myPurchases >ul >li >div{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    width: 100%;
+}
+
+#myPurchases >ul >li >div >p{
+    display: flex;
+    align-self: center;
+    justify-self: flex-end;
+}

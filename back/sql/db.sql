@@ -66,6 +66,41 @@ CREATE TABLE IF NOT EXISTS products_has_categories (
     ON UPDATE CASCADE
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS purchases;
+CREATE TABLE IF NOT EXISTS purchases (
+    id int UNSIGNED NOT NULL AUTO_INCREMENT,
+    total int UNSIGNED NOT NULL,
+    status varchar(10) NOT NULL,
+    payment varchar(10) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    users_id INT UNSIGNED NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (users_id)
+    REFERENCES users (id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+)ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS purchases_has_products;
+CREATE TABLE IF NOT EXISTS purchases_has_products (
+    id int UNSIGNED NOT NULL AUTO_INCREMENT,
+    units int UNSIGNED NOT NULL,
+    products_id INT UNSIGNED NOT NULL,
+    purchases_id INT UNSIGNED NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    FOREIGN KEY (products_id)
+    REFERENCES products (id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+    FOREIGN KEY (purchases_id)
+    REFERENCES purchases (id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+)ENGINE=INNODB DEFAULT CHARSET=utf8;
+
 INSERT INTO users (dni, name, surname, email, role, password) 
 VALUES ('00000000', 'Admin', 'Admin', 'admin@admin.com', 'admin', '$2y$10$blZgwFNBDfDjgo4o5CE9YOXQibNPvnSa.7E0rBtDaNsFGxz.qKYC6'), 
 ('15224879', 'Jorge', 'Perez', 'jorge.perez@gmail.com', 'user', '$2y$10$blZgwFNBDfDjgo4o5CE9YOXQibNPvnSa.7E0rBtDaNsFGxz.qKYC6'), 

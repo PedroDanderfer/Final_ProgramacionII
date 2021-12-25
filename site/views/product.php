@@ -73,6 +73,13 @@ if(!empty($rtaSelectCategories)){
 }
 ?>
 <section id="product">
+    <?php if (isset($_SESSION['status']) && isset($_SESSION['type']) && $_SESSION['status'] === false && $_SESSION['type'] === 'general' && $_SESSION['section'] === 'product' && isset($_SESSION['errors']) && $_SESSION['section'] === $_GET['section']): ?>
+        <ul>
+            <?php foreach ($_SESSION['errors'] as $error): ?>
+                <li><?= $error ?></li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
     <div class="container">
         <div class="row">
             <?php if(isset($product["images"])): ?>
@@ -109,11 +116,6 @@ if(!empty($rtaSelectCategories)){
                     <?php else: ?>
                         <p>El articulo no posee descripción.</p>
                     <?php endif; ?>
-                    <?php if($product["stock"] > 0): ?>
-                        <p>Stock: <?= $product["stock"] ?>.</p>
-                    <?php else: ?>
-                        <p>Sin stock.</p>
-                    <?php endif; ?>
                 </div>
                 <div class="container">
                     <div class="row">
@@ -134,10 +136,24 @@ if(!empty($rtaSelectCategories)){
                         <?php endfor; ?>
                     </ul>
                 <?php endif; ?>
-                <div>
-                    <a href="#">Agregar al carrito</a>
-                    <a href="#">Comprar ahora</a>
-                </div>
+                <?php if(isLogged()): ?>
+                    <div>
+                        <?php if($product["stock"] > 0): ?>
+                            <form action="./back/controller/shoppingCart/add.php" method="POST">
+                                <p>Stock disponible: <?= $product["stock"] ?>.</p>
+                                <input type="number" name="quantity" value="1" min="1" max="<?= $product["stock"] ?>"/>
+                                <input type="hidden" name="product_id" value="<?= $product["id"] ?>" />
+                                <input type="hidden" name="title" value="<?= $product["title"] ?>" />
+                                <input type="hidden" name="stock" value="<?= $product["stock"] ?>" />
+                                <input type="submit" value="Agregar al carrito" />
+                            </form>
+                        <?php else: ?>
+                            <p>Sin stock.</p>
+                        <?php endif; ?>
+                    </div>
+                <?php else: ?>
+                    <a href="./index.php?section=login">Iniciar sesión</a>
+                <?php endif; ?>
             </div>
         </div>
     </div>

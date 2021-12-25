@@ -1,0 +1,71 @@
+#purchase{
+    padding: 20px;
+}
+
+#purchase >form >ul{
+    list-style: none;
+}
+
+#purchase >form >ul >li{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+}
+
+#purchase >form >ul >li >img{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+}
+
+#purchase >form >ul >li >div{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+}
+
+#purchase >form >ul >li >div >div:last-of-type{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+}
+
+#purchase >form >ul >li >div >div:last-of-type >div:last-of-type{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    align-self: center;
+    justify-self: flex-end;
+}
+
+#purchase >form >div:last-of-type{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+}
+
+#purchase >form >div:last-of-type input[type=submit]{
+    display: flex;
+    align-self: center;
+    justify-self: flex-end;
+    width: 80%;
+    max-width: 200px;
+    padding:7px;
+    background-color: darkblue;
+    text-decoration: none;
+    color: white;
+    border: 1px solid darkblue;
+    border-radius: 10px;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+#purchase >form >div:last-of-type p{
+    display: flex;
+    align-self: center;
+    justify-self: flex-start;
+}

@@ -41,7 +41,7 @@ header >nav >ul >li >ul{
         height: fit-content!important;
         padding: 0!important;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 30px;
         grid-template-rows: 1fr;
         float: right;
     }

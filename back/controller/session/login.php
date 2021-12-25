@@ -3,6 +3,7 @@ require("../../config/config.php");
 require("../../config/arrays.php");
 require("../../config/functions/validator.php");
 require("../../config/functions/sql.php");
+require("../../config/functions/session.php");
 
 $data = array(
     "dni" => (empty($_POST['dni'])) ? null : $_POST['dni'],
